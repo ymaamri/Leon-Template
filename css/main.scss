@@ -38,8 +38,6 @@
   padding: 20px;
 
   .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,7 +123,7 @@
     }
   }
 }
-
+$main-color: #10cab7;
 .landing {
   position: relative;
   background-image: url("../images/landing.jpg");
@@ -143,7 +141,7 @@
 
     h1 {
       margin: 0;
-      color: #10cab7;
+      color: $main-color;
       font-weight: bold;
       font-size: 50px;
     }
@@ -170,7 +168,7 @@
       text-align: center;
 
       i {
-        color: #10cab7;
+        color: $main-color;
       }
 
       h3 {
@@ -186,8 +184,63 @@
     }
   }
 }
+$secondary-color: #2c4755;
 .services {
   padding: 60px 0;
   .container {
+  }
+  .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 100px;
+
+    .srv {
+      display: flex;
+      margin-bottom: 40px;
+      i {
+        color: $main-color;
+        flex-basis: 60px;
+      }
+      .text {
+        flex: 1;
+        h3 {
+          margin: 0 0 20px;
+        }
+        p {
+          color: #444;
+          font-weight: 300;
+          line-height: 1.6;
+        }
+      }
+    }
+    .image {
+      text-align: center;
+      position: relative;
+      &::before {
+        content: "";
+        background-color: $secondary-color;
+        width: 100px;
+        height: calc(100% + 100px);
+        top: -50px;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+      }
+      img {
+        width: 260px;
+      }
+    }
+  }
+}
+@media (max-width: 1099px) {
+  .image-column {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .services .services-content .srv {
+    flex-direction: column;
+    text-align: center;
   }
 }
