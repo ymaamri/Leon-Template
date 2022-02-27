@@ -3,8 +3,8 @@ html
 	head 
 		meta(charset="UTF-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		title 
-		link(rel="icon" href="")
+		title Leon - Template
+		link(rel="icon" href="https://i.suar.me/wgn43/l")
 		//- Normalize & Global rules
 		link(rel="stylesheet" href="css/first.css")
 		//- Font Awesome
@@ -17,5 +17,96 @@ html
 		//- Main css file
 		link(rel="stylesheet" href="css/main.css")
 	body
+		.header 
+			.container 
+				img(class="logo" src="images/logo.png")
+				.links
+					span.icon
+						span.s1
+						span.s2
+						span.s3
+					ul.first-ul
+						li
+							a(href="#services") Services
+						li
+							a(href="#portfolio") Portfolio
+						li
+							a(href="#about") About
+						li
+							a(href="#contact") Contact
+		.landing 
+			.intro-text
+				h1 Hello There
+				p We are Leon - Super Creative & Minimal Agency Web Template
+		.features
+			.container
+				.feat
+					i.fas.fa-magic.fa-3x
+					h3 Tell Us Your Idea
+					p
+						| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab
+				.feat
+					i.far.fa-gem.fa-3x
+					h3 We Will Do All The Work
+					p
+						| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab
+				.feat
+					i.fas.fa-globe-asia.fa-3x
+					h3 Your Product is Worldwide
+					p
+						| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab
+		#services.services
+			.container
+				h2.special-heading Services
+				p Don't be busy, be productive
+				.services-content
+					.col
+						.srv
+							i.fas.fa-palette.fa-2x
+							.text
+								h3 Graphic Design
+								p
+									| Graphic design is the process of visual communication and problem-solving using one or more of
+									| typography, photography and illustration.
+						.srv
+							i.fab.fa-sketch.fa-2x
+							.text
+								h3 UI & UX
+								p
+									| Process of enhancing user satisfaction with a product by improving the usability, accessibility, and
+									| pleasure provided in the interaction.
+					.col
+						.srv
+							i.fas.fa-vector-square.fa-2x
+							.text
+								h3 Web Design
+								p
+									| Web design encompasses many different skills and disciplines in the production and maintenance of
+									| websites.
+						.srv
+							i.fas.fa-pencil-ruler.fa-2x
+							.text
+								h3 Web Development
+								p
+									| Web development is a broad term for the work involved in developing a web site for the Internet or an
+									| intranet.
+					.col
+						.image.image-column
+							img(src='images/services.jpg' alt='')
 		//- Scripts
-		script(src="js/main.js") 
+		script(type='text/javascript').
+			let links = document.querySelector(".links");
+			let ul = document.querySelector(".first-ul");
+			document.body.addEventListener("click",(e) => {
+				if (e.target.classList.contains('s1') || 
+				e.target.classList.contains('s2') || 
+				e.target.classList.contains('s3') || 
+				e.target.classList.contains('icon')
+				){
+				ul.style = "display: block;"
+				} else {
+				ul.style = "display: none;"
+
+				}
+			})
+
