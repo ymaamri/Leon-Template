@@ -433,6 +433,7 @@
   font-weight: 800;
   color: #10cab7;
   text-decoration: none;
+  word-wrap: break-word;
 }
 
 .contact .info .social {
